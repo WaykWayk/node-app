@@ -20,7 +20,7 @@
 'use strict';
 
 // Use dotenv to read .env vars into Node
-//require('dotenv').config();
+require('dotenv').config();
 
 // Imports dependencies and set up http server
 const
@@ -44,7 +44,7 @@ app.get('/', function (_req, res) {
 app.get('/webhook', (req, res) => {
 
   // Your verify token. Should be a random string.
-  const VERIFY_TOKEN = 'abc123def456';//process.env.VERIFY_TOKEN;
+  const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
   // Parse the query params
   let mode = req.query['hub.mode'];
